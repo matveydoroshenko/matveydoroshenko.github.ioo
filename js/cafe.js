@@ -249,7 +249,7 @@
       Cafe.updateTotalPrice();
     },
     mainBtnClicked: function() {
-      WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
+      Telegram.WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
       if (!Cafe.canPay || Cafe.isLoading || Cafe.isClosed) {
         return false;
       }
