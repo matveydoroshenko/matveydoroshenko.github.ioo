@@ -249,7 +249,6 @@
       Cafe.updateTotalPrice();
     },
     mainBtnClicked: function() {
-      Telegram.WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
       if (!Cafe.canPay || Cafe.isLoading || Cafe.isClosed) {
         return false;
       }
@@ -268,12 +267,7 @@
         Cafe.toggleLoading(true);
         Cafe.apiRequest('makeOrder', params, function(result) {
           Cafe.toggleLoading(false);
-          if (result.ok) {
-            Telegram.WebApp.close();
-          }
-          if (result.error) {
-            Cafe.showStatus(result.error);
-          }
+          Telegram.WebApp.close();
         });
       } else {
         Cafe.toggleMode(true);
@@ -306,12 +300,12 @@
           onCallback && onCallback(result);
         },
         error: function(xhr) {
-          onCallback && onCallback({error: 'Order was completed'});
+          onCallback && onCallback({error: 'Server error'});
         }
       });
     }
   };
-  
+
   /*!
     Autosize 3.0.20
     license: MIT
