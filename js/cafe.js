@@ -305,6 +305,7 @@
           onCallback && onCallback(result);
         },
         error: function(result) {
+          window.alert(result)
           onCallback && onCallback(result);
         }
       });
