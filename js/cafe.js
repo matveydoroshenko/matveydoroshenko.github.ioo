@@ -249,6 +249,7 @@
       Cafe.updateTotalPrice();
     },
     mainBtnClicked: function() {
+      Cafe.showStatus('Cafe is temporarily closed');
       if (!Cafe.canPay || Cafe.isLoading || Cafe.isClosed) {
         return false;
       }
