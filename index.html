@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DurgerKingBot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="./js/telegram-webview.js"></script>
+    <script>
+      function setThemeClass() {
+        document.documentElement.className = Telegram.WebApp.colorScheme;
+      }
+      Telegram.WebView.onEvent('theme_changed', setThemeClass);
+      setThemeClass();
+    </script>
+    <link href="./css/cafe.css" rel="stylesheet">
+  </head>
+  <body style="display:none">
+    <section class="cafe-page cafe-items">
+    <div class="cafe-item js-item" data-item-id="1" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ISE</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="2" data-item-price="750000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">FMC/FMCv</span>
+      <span class="cafe-item-price">$750</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="3" data-item-price="125000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">Firepower 1k</span>
+      <span class="cafe-item-price">$125</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="4" data-item-price="175000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">Firepower 2k</span>
+      <span class="cafe-item-price">$175</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="5" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">Firepower 4k</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="6" data-item-price="50000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASAv5</span>
+      <span class="cafe-item-price">$50</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="7" data-item-price="100000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASAv10</span>
+      <span class="cafe-item-price">$100</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="8" data-item-price="175000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASAv30</span>
+      <span class="cafe-item-price">$175</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="9" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASAv50</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="10" data-item-price="300000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASAv100</span>
+      <span class="cafe-item-price">$300</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="11" data-item-price="125000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">Catalyst</span>
+      <span class="cafe-item-price">$125</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="12" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">WLC9800</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="13" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">WLC9800</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="14" data-item-price="125000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ISR&nbsp</span>
+      <span class="cafe-item-title">43/44/45&nbsp</span>
+      <span class="cafe-item-title">v17.3</span>
+      <span class="cafe-item-price">$125</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="15" data-item-price="175000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASR920/1k/9k</span>
+      <span class="cafe-item-price">$175</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="16" data-item-price="175000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">CSR1000v</span>
+      <span class="cafe-item-price">$175</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="17" data-item-price="650000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">CUCM/Expressway</span>
+      <span class="cafe-item-price">$650</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="18" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">c8000v&nbsp</span>
+      <span class="cafe-item-title">v17.3+</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="19" data-item-price="1200000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ESAv+XML</span>
+      <span class="cafe-item-price">$1200</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="20" data-item-price="175000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ISR&nbsp</span>
+      <span class="cafe-item-title">43/44/45&nbsp</span>
+      <span class="cafe-item-title">v17.3+</span>
+      <span class="cafe-item-price">$175</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="20" data-item-price="250000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ASR920/1k/9k&nbsp</span>
+      <span class="cafe-item-title">v17.3+</span>
+      <span class="cafe-item-price">$250</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div>  <div class="cafe-item js-item" data-item-id="21" data-item-price="200000">
+    <div class="cafe-item-counter js-item-counter">1</div>
+    <div class="cafe-item-label">
+      <span class="cafe-item-title">ESAv</span>
+      <span class="cafe-item-price">$200</span>
+    </div>
+    <div class="cafe-item-buttons">
+      <button class="cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+      <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+        <span class="button-item-label">Add</span>
+        <span class="ripple-mask"><span class="ripple"></span></span>
+      </button>
+    </div>
+  </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
+
+
+<div class="cafe-status-wrap">
+  <div class="cafe-status js-status"></div>
+</div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/tgsticker.js"></script>
+    <script src="./js/cafe.js"></script>
+    <script>Cafe.init({"apiUrl":"\/cafe\/api","userId":0,"userHash":null, "debug": true});</script>
+  </body>
+</html>
+<!-- page generated in 1.22ms -->
