@@ -249,34 +249,7 @@
       Cafe.updateTotalPrice();
     },
     mainBtnClicked: function() {
-      if (!Cafe.canPay || Cafe.isLoading || Cafe.isClosed) {
-        return false;
-      }
-      if (Cafe.modeOrder) {
-        var comment = $('.js-order-comment-field').val();
-        var params = {
-          order_data: Cafe.getOrderData(),
-          comment: comment
-        };
-        if (!Telegram.WebApp.initData ||
-            !Telegram.WebApp.initData.user ||
-            !Telegram.WebApp.initData.user.id) {
-          params.user_id = Cafe.userId;
-          params.user_hash = Cafe.userHash;
-        }
-        Cafe.toggleLoading(true);
-        Cafe.apiRequest('makeOrder', params, function(result) {
-          Cafe.toggleLoading(false);
-          if (result.ok) {
-            Telegram.WebApp.close();
-          }
-          if (result.error) {
-            Cafe.showStatus(result.error);
-          }
-        });
-      } else {
-        Cafe.toggleMode(true);
-      }
+      Telegram.WebApp.close()
     },
     eStatusClicked: function() {
       Cafe.hideStatus();
