@@ -68,7 +68,7 @@ body.closed .cafe-page {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 330px;
   justify-content: space-between;
   align-content: space-around;
   transition: max-height var(--page-animation), opacity var(--page-animation);
