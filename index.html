@@ -357,8 +357,10 @@
     </section>
     </body>
     <script>
-      let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
-   
-      tg.expand(); //расширяем на все окно  
+      let tg = window.Telegram.WebApp;
+
+      tg.expand();
+
+      tg.MainButton.text = "Changed Text";
    </script>
 </html>
