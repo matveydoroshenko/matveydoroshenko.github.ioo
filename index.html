@@ -11,7 +11,13 @@
           setThemeClass();
         </script>
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script src="https://telegram.org/js/telegram-web-app.js">
+          let tg = window.Telegram.WebApp;
+          tg.MainButton.show()
+          Telegram.WebApp.onEvent('mainButtonClicked', function(){
+            tg.sendData("some string that we need to send");
+          });
+        </script>
     </head>
     <body>
     <section class="items-block">
@@ -26,7 +32,7 @@
             <span class="ripple-mask"><span class="ripple"></span></span>
           </button>
           <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
-            <span class="button-item-label">Add</span>
+            <span class="button-item-label" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Add</span>
             <span class="ripple-mask"><span class="ripple"></span></span>
           </button>
         </div>
@@ -325,7 +331,7 @@
       </div>  <div class="cafe-item js-item" data-item-id="20" data-item-price="250000">
         <div class="cafe-item-counter js-item-counter">1</div>
         <div class="cafe-item-label">
-          <span class="cafe-item-title">&nbspASR920/1k/9k&nbsp</span>
+          <span class="cafe-item-title">ASR920/1k/9k&nbsp</span>
           <span class="cafe-item-title">v17.3+</span>
           <span class="cafe-item-price">$250</span>
         </div>
@@ -355,12 +361,21 @@
         </div>
       </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
     </section>
-        <script type="text/javascript">
-        let tg = window.Telegram.WebApp;
-        tg.MainButton.show()
-        Telegram.WebApp.onEvent('mainButtonClicked', function(){
-	        tg.sendData("some string that we need to send"); 
-        });
-        </script>
+    <script type="text/javascript">
+      var WebApp = window.Telegram.WebApp;
+
+      WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+
+      var MainButton = WebApp.MainButton;
+
+      MainButton.show();
+
+      MainButton.onClick(function() {
+        WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
+      });
+      WebApp.onEvent('mainButtonClicked', function() {
+        /* also */
+      });
+    </script>
     </body>
 </html>
