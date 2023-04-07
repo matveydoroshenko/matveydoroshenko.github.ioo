@@ -11,6 +11,7 @@
           setThemeClass();
         </script>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script></script>
     </head>
     <body>
     <section class="items-block">
@@ -355,19 +356,9 @@
       </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
     </section>
     <script type="text/javascript">
-      var WebApp = window.Telegram.WebApp;
-
-      WebApp.showAlert("Добро пожаловать, @${WebApp.WebAppUser.username}.");
-
-      var MainButton = WebApp.MainButton;
-
-      MainButton.show();
-
-      MainButton.onClick(function() {
-        WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
-      });
-      WebApp.onEvent('mainButtonClicked', function() {
-      });
+      let tg = window.Telegram.WebApp;
+      tg.MainButton.show();
+      tg.MainButton.text = "Changed Text";
     </script>
     </body>
 </html>
