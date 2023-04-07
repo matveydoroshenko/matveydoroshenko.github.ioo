@@ -358,7 +358,9 @@
         <script type="text/javascript">
         let tg = window.Telegram.WebApp;
         tg.MainButton.show()
-        tg.sendData("some string that we need to send");
+        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	        tg.sendData("some string that we need to send"); 
+        });
         </script>
     </body>
 </html>
