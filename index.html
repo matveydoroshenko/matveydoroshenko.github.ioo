@@ -362,7 +362,52 @@
   Telegram.WebApp.onEvent('mainButtonClicked', function(){
     tg.sendData("some string that we need to send");
   });
-  eLottieClicked: function(e) {
+
+  var Cafe = {
+    canPay: true,
+    modeOrder: true,
+    totalPrice: 29,
+
+    init: function(options) {
+      Telegram.WebApp.ready();
+      Cafe.apiUrl = options.apiUrl;
+      Cafe.userId = options.userId;
+      Cafe.userHash = options.userHash;
+      Cafe.initLotties();
+      var userId = Telegram.WebApp.initData && Telegram.WebApp.initData.user && Telegram.WebApp.initData.user.id || Cafe.userId;
+      if(options.debug) {
+        var userId = 2349000000;
+      }
+      $('body').show();
+      if (!userId) {
+        Cafe.isClosed = true;
+        $('body').addClass('closed');
+        Cafe.showStatus('Cafe is temporarily closed');
+        return;
+      }
+      $('.js-item-lottie').on('click', Cafe.eLottieClicked);
+      $('.js-item-incr-btn').on('click', Cafe.eIncrClicked);
+      $('.js-item-decr-btn').on('click', Cafe.eDecrClicked);
+      $('.js-order-edit').on('click', Cafe.eEditClicked);
+      $('.js-status').on('click', Cafe.eStatusClicked);
+      $('.js-order-comment-field').each(function() {
+        autosize(this);
+      });
+      Telegram.WebApp.MainButton.setParams({
+        text_color: '#fff'
+      }).onClick(Cafe.mainBtnClicked);
+      initRipple();
+    },
+    initLotties: function() {
+      $('.js-item-lottie').each(function() {
+        RLottie.init(this, {
+          maxDeviceRatio: 2,
+          cachingModulo: 3,
+          noAutoPlay: true
+        });
+      });
+    },
+    eLottieClicked: function(e) {
       if (Cafe.isClosed) {
         return false;
       }
@@ -406,7 +451,7 @@
       }
       counterEl.css('animation-name', anim_name);
       itemEl.toggleClass('selected', count > 0);
-  
+
       var orderItemEl = Cafe.getOrderItem(itemEl);
       var orderCounterEl = $('.js-order-item-counter', orderItemEl);
       orderCounterEl.text(count ? count : 1);
@@ -414,7 +459,7 @@
       var orderPriceEl = $('.js-order-item-price', orderItemEl);
       var item_price = count * price;
       orderPriceEl.text(Cafe.formatPrice(item_price));
-  
+
       Cafe.updateTotalPrice();
     },
     incrClicked: function(itemEl, delta) {
@@ -561,6 +606,51 @@
       Cafe.updateMainButton();
       $('body').toggleClass('loading', !!Cafe.isLoading);
       Cafe.updateTotalPrice();
-    }
+    },
+    mainBtnClicked: function() {
+      if (!Cafe.canPay || Cafe.isLoading || Cafe.isClosed) {
+        return false;
+      }
+      if (Cafe.modeOrder) {
+        var comment = $('.js-order-comment-field').val();
+        var params = {
+          order_data: Cafe.getOrderData(),
+          comment: comment
+        };
+        if (!Telegram.WebApp.initData ||
+                !Telegram.WebApp.initData.user ||
+                !Telegram.WebApp.initData.user.id) {
+          params.user_id = Cafe.userId;
+          params.user_hash = Cafe.userHash;
+        }
+        Cafe.toggleLoading(true);
+        Cafe.apiRequest('makeOrder', params, function(result) {
+          Cafe.toggleLoading(false);
+          if (result.ok) {
+            Telegram.WebApp.close();
+          }
+          if (result.error) {
+            Cafe.showStatus(result.error);
+          }
+        });
+      } else {
+        Cafe.toggleMode(true);
+      }
+    },
+    eStatusClicked: function() {
+      Cafe.hideStatus();
+    },
+    showStatus: function(text) {
+      clearTimeout(Cafe.statusTo);
+      $('.js-status').text(text).addClass('shown');
+      if (!Cafe.isClosed) {
+        Cafe.statusTo = setTimeout(function(){ Cafe.hideStatus(); }, 2500);
+      }
+    },
+    hideStatus: function() {
+      clearTimeout(Cafe.statusTo);
+      $('.js-status').removeClass('shown');
+    },
+  }
 </script>
 </html>
