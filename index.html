@@ -366,16 +366,20 @@
   });
 
   let button_item_label = document.getElementsByClassName("button-item-label");
-  button_item_label.addEventListener('click', function(){
-	if (tg.MainButton.isActive){
-		tg.MainButton.setParams({"color": "#E0FFFF"});
-		tg.MainButton.disable();
-	}
-	else{
-		tg.MainButton.setParams({"color": "#1A1B37"});
-		tg.MainButton.enable();
-	}
-  });
+
+  let add_button = function () {
+    if (tg.MainButton.isActive) {
+      tg.MainButton.setParams({"color": "#E0FFFF"});
+      tg.MainButton.disable();
+    } else {
+      tg.MainButton.setParams({"color": "#1A1B37"});
+      tg.MainButton.enable();
+    }
+  };
+
+  for (var i = 0; i < button_item_label.length; i++) {
+    button_item_label[i].addEventListener('click', add_button, false);
+  }
 
 </script>
 </html>
