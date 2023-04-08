@@ -26,7 +26,7 @@
             <span class="ripple-mask"><span class="ripple"></span></span>
           </button>
           <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
-            <span class="button-item-label" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Add</span>
+            <span class="button-item-label" id="btnED">Add</span>
             <span class="ripple-mask"><span class="ripple"></span></span>
           </button>
         </div>
@@ -350,7 +350,7 @@
           </button>
           <button class="cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
             <span class="button-item-label">Add</span>
-            <span class="ripple-mask"><span class="ripple"></span></span>
+            <span class="ripple-mask"><span class="ripple"></span></span> 
           </button>
         </div>
       </div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div><div class="cafe-item-shadow"></div>
@@ -359,6 +359,31 @@
 <script type="text/javascript">
   let tg = window.Telegram.WebApp;
   tg.MainButton.show();
-  tg.sendData("some string that we need to send"); 
+  btn.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	  if (tg.MainButton.isVisible){ //если кнопка показана 
+		  tg.MainButton.hide() //скрываем кнопку 
+	  }
+    else{ //иначе
+  	  tg.MainButton.show() //показываем 
+    }
+  });
+    
+  let btnED = document.getElementById("btnED"); //получаем кнопку активировать/деактивировать
+    
+  btnED.addEventListener('click', function(){ //вешаем событие на нажатие html-кнопки
+	  if (tg.MainButton.isActive){ //если кнопка показана 
+		  tg.MainButton.setParams({"color": "#E0FFFF"}); //меняем цвет
+		  tg.MainButton.disable() //скрываем кнопку 
+	  }
+	  else{ //иначе
+		  tg.MainButton.setParams({"color": "#143F6B"}); //меняем цвет
+		  tg.MainButton.enable() //показываем 
+	  }
+  });
+  
+  Telegram.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
+  });
 </script>
 </html>
