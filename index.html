@@ -358,15 +358,15 @@
 </body>
 <script type="text/javascript">
   let tg = window.Telegram.WebApp;
-  let button-item-label = document.getElementsByClassName("button-item-label");
 
-  tg.MainButton.show()
+  tg.MainButton.show();
 
   Telegram.WebApp.onEvent('mainButtonClicked', function(){
     tg.sendData("some string that we need to send");
   });
-	
-  button-item-label.addEventListener('click', function(){
+
+  let button_item_label = document.getElementsByClassName("button-item-label");
+  button_item_label.addEventListener('click', function(){
 	if (tg.MainButton.isActive){
 		tg.MainButton.setParams({"color": "#E0FFFF"});
 		tg.MainButton.disable();
