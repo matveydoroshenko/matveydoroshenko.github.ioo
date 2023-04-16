@@ -1,0 +1,105 @@
+body {
+  font-family: sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+header h1 {
+  margin: 0;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  margin: 0 1rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+section {
+  border: 1px solid #999;
+  padding: 1rem;
+  flex-basis: 50%;
+}
+section h2 {
+  margin: 0;
+}
+section p {
+  margin: 0;
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+/* style for the cart section and total */
+#cart {
+  margin-left: 1rem;
+  width: 25%;
+}
+#cart h2 {
+  margin-bottom: 0.5rem;
+}
+#cart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cart li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+#cart li span {
+  font-weight: bold;
+}
+#cart button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* responsive layout for small screens */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  section {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+  }
+  #cart {
+    margin-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+}
