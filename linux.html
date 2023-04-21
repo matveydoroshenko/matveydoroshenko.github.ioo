@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Инструкция Wireguard</title>
+    <link rel="stylesheet" type="text/css" href="css/c22fa09e8e1a5f50.css"/>
+    <link rel="stylesheet" type="text/css" href="css/3b2d921b4f554304.css"/>
+    <meta name="description" content="Инструкция по подключению к VPN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<header class="navbar fixed z-50 bg-primary">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <label tabindex="0" class="btn-ghost btn-circle btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
+                </svg>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-neutral p-2 shadow">
+                <li><a href="ios.html">iOS</a></li>
+                <li><a href="android.html">Android</a></li>
+                <li><a href="mac.html">MacOS</a></li>
+                <li><a href="windows.html">Windows</a></li>
+                <li><a href="linux.html">Linux</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="navbar-end pr-2">
+        <p class="text-xl normal-case">Инструкция</p>
+    </div>
+</header>
+<h2 class="text-center text-xl">
+    <br>
+    <br>
+    <br>
+    Настройка для Linux
+</h2>
+<ol class="flex flex-col gap-4">
+    <li>
+        <br>
+        &nbsp&nbsp&nbsp&nbspРассмотрим на примере операционной <br>&nbsp&nbsp&nbsp&nbspсистемы Ubuntu 20.04.
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbspНа текущий момент Ubuntu не имеет <br>&nbsp&nbsp&nbsp&nbspинструментов в графическом интерфейсе <br>&nbsp&nbsp&nbsp&nbspдля работы с протоколом WireGuard, <br>&nbsp&nbsp&nbsp&nbspпоэтому настройку будет необходимо <br>&nbsp&nbsp&nbsp&nbspвыполнять через терминал.
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbsp1. Установите WireGuard:
+    </li>
+    <li>
+        <div class="mockup-code">
+            <pre data-prefix="$"><code>apt install wireguard</code></pre>
+        </div>
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbsp2. Откройте файл wg0.conf и скопируйте в<br> &nbsp&nbsp&nbsp&nbspнего содержимое конфигурационного <br>&nbsp&nbsp&nbsp&nbspфайла, который пришел на вашу почту после &nbsp&nbsp&nbsp&nbspустановки сервера VPN.
+    </li>
+    <li>
+        <div class="mockup-code">
+            <pre data-prefix="$"><code>nano /etc/wireguard/wg0.conf</code></pre>
+        </div>
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbsp3. Сохраните изменения.
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbspДля подключения используйте команду:
+    </li>
+    <li>
+        <div class="mockup-code">
+            <pre data-prefix="$"><code>wg-quick up wg0</code></pre>
+        </div>
+    </li>
+    <li>
+        &nbsp&nbsp&nbsp&nbspЕсли нужно, чтобы подключение по <br>&nbsp&nbsp&nbsp&nbspWireGuard устанавливалось автоматически <br>&nbsp&nbsp&nbsp&nbspпри запуске системы, добавьте wg-quick в <br>&nbsp&nbsp&nbsp&nbspавтозагрузку:
+    </li>
+    <li>
+        <div class="mockup-code">
+            <pre data-prefix="$"><code>systemctl enable wg-quick@wg0.service</code></pre>
+        </div>
+        <br>
+    </li>
+</ol>
+</body>
+</html>
